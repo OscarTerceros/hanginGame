@@ -1,5 +1,6 @@
 import { letters } from './helpers/letters';
 import './App.css'
+import { HangImage } from './components/HangImage';
 
 function App() {
   
@@ -7,6 +8,7 @@ function App() {
     <>
       {/* Imágenes */}
       <h3>Imagen del juego</h3>
+      <HangImage/>
 
       {/* Palabra oculta */}
       <h3>_ _ _ _ _ _ _ _ _ _</h3>
