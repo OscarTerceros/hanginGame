@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { letters } from './helpers/letters';
 import { HangImage } from './components/HangImage';
+import { getRandomWord } from './helpers/getRandomWord';
 
 import './App.css'
 
 function App() {
 
-  const [ word, setWord ] = useState( 'COMPUTADORA' );
+  const [ word ] = useState( getRandomWord() );
   const [hiddenWord, setHiddenWord] = useState( '_ '.repeat( word.length ) );
   const [ attempts, setAttempts ] = useState( 0 );
   const [ lose, SetLose ] = useState( false );
