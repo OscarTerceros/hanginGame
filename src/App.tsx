@@ -7,8 +7,7 @@ function App() {
   return (
     <>
       {/* Imágenes */}
-      <h3>Imagen del juego</h3>
-      <HangImage/>
+      <HangImage imageNumber = { 9 } />
 
       {/* Palabra oculta */}
       <h3>_ _ _ _ _ _ _ _ _ _</h3>
