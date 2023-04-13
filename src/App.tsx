@@ -7,8 +7,8 @@ import './App.css'
 
 function App() {
 
-  const [ word ] = useState( getRandomWord() );
-  const [hiddenWord, setHiddenWord] = useState( '_ '.repeat( word.length ) );
+  const [ word, setWord ] = useState( getRandomWord() );
+  const [ hiddenWord, setHiddenWord ] = useState( '_ '.repeat( word.length ) );
   const [ attempts, setAttempts ] = useState( 0 );
   const [ lose, SetLose ] = useState( false );
   const [ won, SetWon ] = useState( false );
@@ -48,6 +48,16 @@ function App() {
     setHiddenWord( hiddenWordArray.join( ' ' ) );
   }
 
+  const newGame = () => {
+
+    setWord( getRandomWord() );
+    setHiddenWord( '_ '.repeat( word.length ) );
+    setAttempts( 0 );
+    SetLose( false );
+    SetWon( false );
+
+  }
+
   return (
     <>
       {/* Imágenes */}
@@ -56,7 +66,7 @@ function App() {
       {/* Palabra oculta */}
       <h3>{ hiddenWord }</h3>
       
-      {/* Contador dew intentos */}
+      {/* Contador de intentos */}
       <h3>Intentos: { attempts }</h3>
 
       {/* Mensaje si perdió */}
@@ -74,6 +84,11 @@ function App() {
       
       {/* Botones de letras */}
       { letters.map( ( letter: string, i: number ) => <button onClick={ () => checkLetter( letter ) } key={ i }> {letter} </button> )}
+
+      {/* Boton de nuevo juego */}
+      <br></br>
+      <button onClick={ newGame }>Juego nuevo</button>
+
     </>
   )
 }
